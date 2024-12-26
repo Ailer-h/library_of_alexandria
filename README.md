@@ -1,5 +1,5 @@
 # THIS PROJECT IS STILL A WORK IN PROGRESS
-This project is a reading tracker, aiming to solve a problem of not having enough data on your reading periods.
+This project is a reading tracker, aiming to solve the problem of not having enough data on your reading periods.
 
 ## Used technologies.
 
