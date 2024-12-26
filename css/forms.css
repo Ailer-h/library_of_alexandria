@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+body{
+    
+    background-image: url(../images/books.jpg);
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: start;
+
+}
+
+.form-box{
+
+    background-color: #fffbce;
+
+    width: 30em;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.form-box .inputs{
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.form-box .inputs .input{
+    position: relative;
+
+    width: 65%;
+
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+}
+
+.form-box .inputs .input svg{
+    position: absolute;
+    right: .5em;
+    top: 0em;
+
+    cursor: pointer;
+}
+
+.form-box .inputs .input input{
+    height: 2em;
+    width: 100%;
+    padding-left: .5em;
+
+    background-color: transparent;
+
+    border: none;
+    outline: none;
+
+    font-size: 1em;
+
+    border-bottom: .1em solid #212121;
+}
+
+.form-box .inputs .input label{
+    position: absolute;
+
+    line-height: 1em;
+
+    top: .5em;
+    left: .5em;
+
+    transform-origin: left center;
+    transition: transform 250ms;
+}
+
+.form-box .inputs .input input:focus + label,
+.form-box .inputs .input input:not(:placeholder-shown) + label{
+    transform: translateY(-150%);
+}
+
+.form-box button[type="submit"]{
+
+    width: 10em;
+    height: 3em;
+
+    border: none;
+    border-radius: 1em;
+
+    font-size: 1.25em;
+    cursor: pointer;
+
+    background-color: #60a8ff;
+    color: #212121;
+
+    transition: 200ms;
+
+}
+
+.form-box button[type="submit"]:hover{
+
+    background-color: #5493df;
+
+    transition: 200ms;
+
+}
