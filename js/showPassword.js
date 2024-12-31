@@ -1,9 +1,11 @@
-function showPassword(passwordId){
+function showPassword(passwordId, confirmation){
 
-    let password_input = document.getElementById(passwordId);
+    let sufix = confirmation ? "_conf" : "";
 
-    let icon_shown = document.getElementById('shown');
-    let icon_hidden = document.getElementById('hidden');
+    let password_input = document.getElementById(passwordId + sufix);
+
+    let icon_shown = document.getElementById('shown' + sufix);
+    let icon_hidden = document.getElementById('hidden' + sufix);
 
     if(password_input.type == "password"){
         password_input.type = "text";

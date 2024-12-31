@@ -10,6 +10,10 @@ body{
     
     background-image: url(../images/books.jpg);
 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
     overflow: hidden;
 
     display: flex;
@@ -17,9 +21,29 @@ body{
 
 }
 
+a{
+
+    text-decoration: none;
+    color: #5493df;
+
+}
+
+h1{
+
+    width: 10em;
+    text-align: center;
+
+}
+
+a:hover{
+
+    color: #4275b2;
+
+}
+
 .form-box{
 
-    background-color: #fffbce;
+    background-color: #f5f5f5;
 
     width: 30em;
     height: 100vh;
@@ -28,6 +52,10 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+
+    border-radius: 0 1em 1em 0;
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 
 }
 
@@ -48,6 +76,7 @@ body{
 
     margin-top: 1.25em;
     margin-bottom: 1.25em;
+
 }
 
 .form-box .inputs .input svg{
@@ -73,6 +102,27 @@ body{
     border-bottom: .1em solid #212121;
 }
 
+.form-box .inputs .input input.right + label{
+    color: #FB4141;
+}
+
+.form-box .inputs .input input.right + svg{
+    fill: #FB4141;
+}
+
+.form-box .inputs .input input.wrong{
+    border-bottom: .1em solid #FB4141;
+    color: #FB4141;
+}
+
+.form-box .inputs .input input.wrong + label{
+    color: #FB4141;
+}
+
+.form-box .inputs .input input.wrong + svg{
+    fill: #FB4141;
+}
+
 .form-box .inputs .input label{
     position: absolute;
 
@@ -85,9 +135,23 @@ body{
     transition: transform 250ms;
 }
 
+.form-box .inputs .input a{
+
+    line-height: 3em;
+
+}
+
 .form-box .inputs .input input:focus + label,
 .form-box .inputs .input input:not(:placeholder-shown) + label{
     transform: translateY(-150%);
+}
+
+.form-box .actions{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 1em;
 }
 
 .form-box button[type="submit"]{
