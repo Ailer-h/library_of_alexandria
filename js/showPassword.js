@@ -7,6 +7,10 @@ function showPassword(passwordId, confirmation){
     let icon_shown = document.getElementById('shown' + sufix);
     let icon_hidden = document.getElementById('hidden' + sufix);
 
+    if(password_input.disabled){
+        return;
+    }
+
     if(password_input.type == "password"){
         password_input.type = "text";
         

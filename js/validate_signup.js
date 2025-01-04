@@ -27,6 +27,9 @@ function password_matches(){
 //Responsible to handle changing the state from wrong to right on the confirmation
 function validate_password(){
 
+    let icon_shown = document.getElementById('shown_conf');
+    let icon_hidden = document.getElementById('hidden_conf');
+
     confirmation_input.disabled = false;
     
     if(!has_minimum_length(password_input.value, 8)){
@@ -67,7 +70,7 @@ function validate_form(){
     }
 
     //Check if the password and the confirmation match
-    if(!password_matches()){
+    if(!password_matches() || !has_minimum_length(password_input.value, 8)){
         return;
     }
 
@@ -83,3 +86,29 @@ form.forEach(input =>{
 //Adds the password validation to the inputs
 password_input.addEventListener('input', validate_password);
 confirmation_input.addEventListener('input', validate_password);
+
+document.getElementById('signup').addEventListener('submit', function(event){
+    event.preventDefault();
+
+    $.ajax({
+        url: "../php/registerUser.php",
+        method: "post",
+        data:{
+            "username": name_input.value,
+            "email": email_input.value,
+            "password": password_input.value
+        
+        }
+    })
+    .done(function(data){
+        
+        if(data == 'SUCCESS'){
+            window.location.href = "main.html";
+        
+        }
+
+        alert('ERROR')
+
+    })
+
+})
