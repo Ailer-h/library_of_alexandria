@@ -9,14 +9,14 @@
 </head>
 <body>
     
-    <form action="#">
+    <form action="#" id="signup">
     <div class="form-box">
 
         <h1>Welcome to the Alexandria Library!</h1>
 
         <div class="inputs">
             <div class="input">
-                <input type="text" name="name" id="name" placeholder="" required>
+                <input type="text" name="name" id="name" placeholder="" oninput="letters_js(this.value, this)" required>
                 <label for="name">Full Name</label>
             </div>
             
@@ -35,7 +35,7 @@
             </div>
 
             <div class="input">
-                <input type="password" name="password_conf" id="password_conf" placeholder="" oninput="validatePassword('password','password_conf')" required>
+                <input type="password" name="password_conf" id="password_conf" placeholder="" oninput="validatePassword('password','password_conf')" required disabled>
                 <label for="password_conf">Confirm Password</label>
 
                 <svg onclick="showPassword('password', true)" id="shown_conf" style="display: none;" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#212121"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="actions">
-            <button type="submit">Sign Up</button>
+            <button type="submit" id="submit" disabled>Sign Up</button>
             <span>
                 Already have an account? <a href="login.php">Log In</a>
             </span>
@@ -56,5 +56,6 @@
         
 </body>
 <script src="../js/showPassword.js"></script>
-<script src="../js/confirmPassword.js"></script>
+<script src="../js/masks.js"></script>
+<script src="../js/validate_signup.js"></script>
 </html>

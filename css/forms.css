@@ -100,14 +100,33 @@ a:hover{
     font-size: 1em;
 
     border-bottom: .1em solid #212121;
+
+}
+
+.form-box .inputs .input input:disabled{
+    border-bottom: .1em solid #575757;
+}
+
+.form-box .inputs .input input:disabled + label{
+    color: #575757;
+    font-style: italic;
+}
+
+.form-box .inputs .input input:disabled ~ svg{
+    fill: #575757;
+}
+
+.form-box .inputs .input input.right{
+    border-bottom: .1em solid #3E7B27;
+    color: #3E7B27;
 }
 
 .form-box .inputs .input input.right + label{
-    color: #FB4141;
+    color: #3E7B27;
 }
 
-.form-box .inputs .input input.right + svg{
-    fill: #FB4141;
+.form-box .inputs .input input.right ~ svg{
+    fill: #3E7B27;
 }
 
 .form-box .inputs .input input.wrong{
@@ -119,7 +138,7 @@ a:hover{
     color: #FB4141;
 }
 
-.form-box .inputs .input input.wrong + svg{
+.form-box .inputs .input input.wrong ~ svg{
     fill: #FB4141;
 }
 
@@ -177,5 +196,14 @@ a:hover{
     background-color: #5493df;
 
     transition: 200ms;
+
+}
+
+.form-box button[type="submit"]:disabled{
+
+    cursor: default;
+
+    background-color: #b5d4f9;
+    color: #535353;
 
 }
