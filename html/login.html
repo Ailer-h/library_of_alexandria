@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <form action="#">
+    <form id="login" novalidate>
     <div class="form-box">
 
         <h1>Welcome Back!</h1>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="actions">
-            <button type="submit">Log In</button>
+            <button type="submit" id="submit" disabled>Log In</button>
             <span>
                 Don't have an account? <a href="signup.html">Sign Up</a>
             </span>
@@ -43,6 +43,15 @@
     </div>
     </form>
         
+    <div class="error_toast" id="error_toast">
+        <h2>User already exists</h2>
+        <hr>
+        <p id="error_body">This email is already registered, use a different one please.</p>
+        <div class="toast_bar"></div>
+    </div>
+
 </body>
+<script src="../js/toasts.js"></script>
 <script src="../js/showPassword.js"></script>
+<script src="../js/validate_login.js"></script>
 </html>

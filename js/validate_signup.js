@@ -1,4 +1,4 @@
-const form = document.querySelectorAll('#signup input')
+const form = document.querySelectorAll('#signup input');
 
 const name_input = document.getElementById('name');
 const email_input = document.getElementById('email');
@@ -87,6 +87,7 @@ form.forEach(input =>{
 password_input.addEventListener('input', validate_password);
 confirmation_input.addEventListener('input', validate_password);
 
+//Checks form submission and stops it to handle it via Javascript
 document.getElementById('signup').addEventListener('submit', function(event){
     event.preventDefault();
 
@@ -102,6 +103,9 @@ document.getElementById('signup').addEventListener('submit', function(event){
     })
     .done(function(data){
         
+        console.log(password_input.value)
+        console.log(data);
+
         if(data == 'SUCCESS'){
             window.location.href = "main.html";
         
