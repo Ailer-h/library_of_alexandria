@@ -107,7 +107,14 @@ document.getElementById('signup').addEventListener('submit', function(event){
         
         }
 
-        alert('ERROR')
+        set_toast_content("error_toast", "User already exists.",
+            "This user is already registered. Please, use another email."
+        )
+        show_toast("error_toast", 3000)
+
+        $("#email").val("");
+        $("#email").focus();
+        
 
     })
 

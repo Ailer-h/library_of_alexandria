@@ -56,9 +56,10 @@
     </form>
 
     <div class="error_toast" id="error_toast">
-        <h2 id="error_title">User already exists</h2>
+        <h2>User already exists</h2>
+        <hr>
         <p id="error_body">This email is already registered, use a different one please.</p>
-        <div id="toast_bar"></div>
+        <div class="toast_bar"></div>
     </div>
         
 </body>
