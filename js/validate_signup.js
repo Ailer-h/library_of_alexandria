@@ -7,17 +7,6 @@ const confirmation_input = document.getElementById('password_conf');
 
 const btn_submit = document.getElementById('submit');
 
-//Checks if the given email is valid (format: adress@client.com)
-function is_valid_email(email){
-    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return pattern.test(email);
-}
-
-//Checks if a value hes the minimum length desired
-function has_minimum_length(value, min_length){
-    return value.length >= min_length;
-}
-
 //Check if the password and the confirmation match
 function password_matches(){
     return confirmation_input.value == password_input.value;
@@ -110,6 +99,8 @@ document.getElementById('signup').addEventListener('submit', function(event){
             window.location.href = "main.html";
         
         }
+
+        btn_submit.disabled = true;
 
         set_toast_content("error_toast", "User already exists.",
             "This user is already registered. Please, use another email."

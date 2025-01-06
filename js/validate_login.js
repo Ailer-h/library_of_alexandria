@@ -5,15 +5,6 @@ const password_input = document.getElementById('password');
 
 const btn_submit = document.getElementById('submit');
 
-function is_valid_email(email){
-    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return pattern.test(email);
-}
-
-function has_minimum_length(value, min_length){
-    return value.length >= min_length;
-}
-
 function validate_login(){
 
     btn_submit.disabled = true;
@@ -56,6 +47,8 @@ document.getElementById('login').addEventListener('submit', function(event){
             window.location.href = "main.html";
         
         }
+
+        btn_submit.disabled = true;
 
         if(data == '100'){
 
