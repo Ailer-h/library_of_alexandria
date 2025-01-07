@@ -194,7 +194,7 @@ a:hover{
 
 .form-box button[type="submit"]:hover{
 
-    background-color: #5493df;
+    filter: brightness(.8);
 
     transition: 200ms;
 

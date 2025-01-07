@@ -96,7 +96,7 @@ body::-webkit-scrollbar-thumb:hover{
 
 .navbar .buttons #log-in:hover{
 
-    background-color: #5493df;
+    filter: brightness(.8);
 
     transition: 200ms;
 
