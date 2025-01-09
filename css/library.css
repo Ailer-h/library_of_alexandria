@@ -5,10 +5,12 @@
     --main-colour: #4b594c;
     --background: #f5f5f5;
     --secondary-bg: #c3c2c2;
+    --secondary-bg-transparent: #c3c2c284;
 
     --accent1: #60a8ff;
 
     --text-colour: #121212;
+    --text-colour-secondary: #424242;
     
 }
 
@@ -17,8 +19,10 @@
     --main-colour: #434f44;
     --background: #121212;
     --secondary-bg: #313131;
+    --secondary-bg-transparent: #31313184;
 
     --text-colour: #f5f5f5;
+    --text-colour-secondary: #b9b7b7;
 
 }
 
@@ -50,6 +54,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 
 }
 
@@ -93,13 +98,26 @@ body{
     margin-top: .5em;
     
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: repeat(4, 25%);
 
     row-gap: 2em;
-    column-gap: 1em;
+    column-gap: .5em;
 
     overflow-y: scroll;
+    overflow-x: hidden;
 
+}
+
+.books-grid::-webkit-scrollbar{
+    width: .5em;
+}
+.books-grid::-webkit-scrollbar-track{
+    background-color: var(--secondary-bg);
+
+}
+
+.books-grid::-webkit-scrollbar-thumb{
+    background-color: var(--text-colour-secondary);
 }
 
 .books-grid .grid-item{
@@ -117,32 +135,78 @@ body{
     background-color: var(--secondary-bg);
 
     width: 20em;
-    height: fit-content;
+    height: 22em;
 
     padding-bottom: 1em;
 
     position: relative;
+
+    z-index: -1;
 }
 
-.book img{
+.book .image{
+    height: 15em;
+
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book .image img{
     width: 100%;
     height: 15em;
     object-fit: cover;
 }
 
-.book h3{
-    font-size: 1.5em;
+.book .image svg{
 
-    margin-top: .3em;
+    width: 8em;
+    height: 8em;
 
-    color: var(--text-colour);
-    margin-left: .5em;
+    fill: #121212;
+
 }
 
-.book ul{
-    margin-left: .5em;
+.book .title{
+
+    height: 2.5em;
+    width: calc(100% - 1em);
+
+    padding: 0 .5em;
+
+    overflow: hidden;
+
     margin-top: .3em;
 
+}
+
+.book .title p{
+    font-size: 1.2em;
+    line-height: 1em;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    line-clamp: 2;
+    text-overflow: ellipsis;
+
+    color: var(--text-colour);
+}
+
+.book .tags{
+    
+    height: 2em;
+    width: calc(100% - 1em);
+    padding: 0 .5em;
+
+    margin-top: .3em;
+
+}
+
+.book .tags ul{
     display: flex;
     gap: .2em;
 }
@@ -156,11 +220,35 @@ body{
 
 }
 
-.book p{
-    margin-left: .5em;
+.book .state{
+
+    height: 2em;
+    width: calc(100% - 1em);
+    padding: 0 .5em;
 
     margin-top: .3em;
 
+}
+
+.book .state p{
+    font-size: 1em;
+    font-weight: bold;
+
+    width: fit-content;
+    padding: .2em .5em;
+
+    border-radius: .4em;
+
+}
+
+.book .state p.reading{
+    background-color: #69247C;
+}
+.book .state p.read{
+    background-color: #5CB338;
+}
+.book .state p.not-read{
+    background-color: #F93827;
 }
 
 .book button{
@@ -168,7 +256,7 @@ body{
 
     position: absolute;
     bottom: 1em;
-    right: 1em;
+    right: 1.5em;
 
     margin-top: .3em;
 
@@ -177,8 +265,7 @@ body{
 
     padding: .5em;
     background-color: var(--accent1);
-    font-weight: bold;
-    font-style: italic;
+    font-weight: bolder;
 
     cursor: pointer;
 
@@ -188,25 +275,23 @@ body{
     filter: brightness(.8);
 }
 
-.book p{
-    width: fit-content;
+.modal-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
 
-    margin-top: .3em;
+    top: 0;
 
-    padding: .1em .5em;
-
-    border-radius: .4em;
-
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    backdrop-filter: brightness(50%) blur(.3em);
 
 }
 
-.book .reading{
-    background-color: #69247C;
-}
-.book .read{
-    background-color: #3E7B27;
-}
-.book .not-read{
-    background-color: #8E1616;
+.modal{
+    background-color: red;
+    width: 10em;
+    height: 10em;
 }
