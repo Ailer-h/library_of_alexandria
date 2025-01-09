@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         var userdata = JSON.parse(data);
+        console.log(userdata)
         
         $("#username_box").text("Hello " + userdata['username'] + "!");
 
@@ -38,6 +39,7 @@ function logout(){
 function edit_session(attr, value){
     $.ajax({
         url: "../php/change_session_attribute.php",
+        method: "post",
         data: {
             attr: attr,
             value: value
