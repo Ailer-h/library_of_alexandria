@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/modal.css">
     <link rel="stylesheet" href="../css/library.css">
     <title>My library</title>
 </head>
@@ -99,10 +101,50 @@
     </div>
 
     <div class="modal-bg" id="modal1">
-        <div class="modal">
+        <div class="modal medium">
             <div class="modal-header">
                 <h2>Modal Title</h2>
                 <svg onclick="close_modal('modal1', 100)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#212121"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </div>
+            <div class="modal-body">
+                <div class="grid">
+                    <div class="image-container">
+                        <label for="img">
+                            <img src="" id="thumbnail">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#212121"><path d="M480-480ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h320v80H200v560h560v-320h80v320q0 33-23.5 56.5T760-120H200Zm40-160h480L570-480 450-320l-90-120-120 160Zm440-320v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z"/></svg>
+                            <span>Add image</span>
+                        </label>
+
+                        <input type="file" name="img" id="img" accept='.jpg, .jpeg' oninput="change_placeholder(this.id,'thumbnail')">
+                    </div>
+                    <div class="form">
+                        <div class="cell">
+                            <label for="title">Title:</label>
+                            <input type="text" name="title" id="title">
+                        </div>
+
+                        <div class="cell">
+                            <label for="author">Author:</label>
+                            <input type="author" name="author" id="author">
+                        </div>
+
+                        <div class="cell">
+                            <label for="genre">Genre:</label>
+                            <select name="genre" id="genre">
+                                <option value="Fiction">Fiction</option>
+                                <option value="Fiction">Fiction</option>
+                                <option value="Fiction">Fiction</option>
+                                <option value="Fiction">Fiction</option>
+
+                                <option>Add new genre...</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-controls">
+                <button class="cancel">Cancel</button>
+                <button class="submit">Save</button>
             </div>
         </div>
         <div class="close"></div>
@@ -110,6 +152,7 @@
 
 </body>
 <script src="../js/control_modal.js"></script>
+<script src="../js/change_placeholder.js"></script>
 <script src="../js/session_functions.js"></script>
 <script src="../js/show_menu.js"></script>
 </html>
