@@ -1,17 +1,3 @@
-/* Size classes */
-.small{
-    min-width: 30em;
-}
-
-.medium{
-    min-width: 50em;
-}
-
-.large{
-    min-width: 80em;
-}
-
-
 /* Modal classes */
 .modal-bg{
     position: absolute;
@@ -20,7 +6,7 @@
 
     top: 0;
     
-    display: flex;
+    display: none;
     align-items: start;
     justify-content: center;
     
@@ -33,11 +19,9 @@
     
     height: 30em;
 
-    margin-top: 5em;
-
     border-radius: 2em;
 
-    display: block;
+    display: none;
 }
 
 .modal-bg .close{
@@ -137,6 +121,12 @@
     filter: brightness(.8);
 }
 
+.modal-controls .submit:disabled{
+    cursor: default;
+
+    background-color: #b5d4f9;
+    color: #535353;
+}
 
 .modal-body{
     height: calc(100% - 8em);
@@ -149,4 +139,26 @@
 
     height: 100%;
 
+}
+
+/* Size classes */
+.small{
+    min-width: 30em;
+    margin-top: 5em;
+}
+
+.medium{
+    min-width: 50em;
+    margin-top: 5em;
+}
+
+.large{
+    min-width: 80em;
+    margin-top: 5em;
+}
+
+.full{
+    width: 100%;
+    min-height: 90vh;
+    margin-top: 2em;
 }

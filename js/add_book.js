@@ -1,0 +1,43 @@
+const form = document.querySelectorAll("#newbook input");
+
+const title_input = document.getElementById('title');
+const author_input = document.getElementById('author');
+const genre_input = document.getElementById('genre');
+const nPages_input = document.getElementById('n_pages');
+
+const btn_submit = document.getElementById('submit');
+
+function validate_form(){
+
+    btn_submit.disabled = true;
+
+    if(!has_minimum_length(title_input.value, 1)){
+        return;
+    
+    }
+
+    if(!has_minimum_length(author_input.value, 1)){
+        return;
+    }
+
+    if(!has_minimum_length(genre_input.value, 1)){
+        return;
+    }
+    
+    if(!has_minimum_length(nPages_input.value, 1)){
+        return;
+    }
+
+    btn_submit.disabled = true;
+
+}
+
+form.forEach(input =>{
+    input.addEventListener('input', validate_form);
+})
+
+document.getElementById('newbook').addEventListener('submit', function(event){
+
+    event.preventDefault();
+
+})

@@ -64,6 +64,53 @@ body{
 
 }
 
+.stats-bar h1 span{
+    font-size: .4em;
+}
+
+.stats-bar .actions{
+    display: flex;
+
+    gap: 2em;
+}
+
+.stats-bar .search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+
+    height: 2em;
+
+}
+
+.stats-bar .search svg{
+    background-color: var(--accent1);
+
+    width: 2em;
+    height: 2em;
+
+    border-radius: .5em 0 0 .5em;
+    fill: #121212;
+}
+
+.stats-bar .search input{
+
+    background-color: var(--background);
+    color: var(--text-colour);
+
+    height: 100%;
+
+    outline: none;
+    border: none;
+
+    width: 15em;
+
+    border-radius: 0 .5em .5em 0;
+
+    padding-left: .5em;
+}
+
 .stats-bar button{
 
     display: flex;
@@ -287,8 +334,8 @@ body{
 .image-container #thumbnail{
 
     display: none;
-    height: 15em;
-    width: 10em;
+    height: 20em;
+    width: 15em;
 
     object-fit: cover;
 
@@ -303,6 +350,41 @@ body{
     flex-direction: column;
 
     align-items: center;
+    justify-content: center;
+    height: 20em;
+    width: 15em;
+
+    border: .1em dashed var(--text-colour-secondary);
+    cursor: pointer;
+
+    position: relative;
+
+}
+
+.image-container label #cancel{
+    
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 2em;
+    height: 2em;
+
+    bottom: 0em;
+    right: 0em;
+
+    display: none;
+
+    border-radius: .5em 0 0 0;
+
+    background-color: var(--secondary-bg-transparent);
+
+}
+
+.image-container label #cancel svg{
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .image-container label svg{
@@ -355,7 +437,7 @@ body{
 
 }
 
-.form input, select{
+.form input{
     background-color: transparent;
     border: none;
     outline: none;
@@ -370,12 +452,17 @@ body{
     flex: 1;
 }
 
-.form select{
-    background-color: var(--background);
-}
+.form textarea{
+    background-color: transparent;
+    border: .1em solid var(--text-colour);
+    outline: none;
+    padding-left: .5em;
+    padding-top: .3em;
+    box-sizing: border-box;
+    color: var(--text-colour);
+    font-size: 1em;
 
-.form select option svg{
+    height: 12em;
+    resize: none;
 
-    font-family: "FontAwesome";
-    fill: var(--text-colour);
 }

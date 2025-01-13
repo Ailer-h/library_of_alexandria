@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"/>
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/modal.css">
@@ -46,11 +45,18 @@
     </div>
 
     <div class="stats-bar navbar-margin">
-        <h1>Livros: 125</h1>
-        <button onclick="show_modal('modal1', 200)">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#212121"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-            New book
-        </button>
+        <h1>All books <span>(125)</span></h1>
+
+        <div class="actions">
+            <div class="search">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#212121"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                <input type="text" id="search" placeholder="Search...">
+            </div>
+            <button onclick="show_modal('modal1', 200)">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#212121"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                New book
+            </button>
+        </div>
     </div>
     <div class="books-grid">
         <div class="grid-item">
@@ -100,10 +106,11 @@
         
     </div>
 
+    <form id="newbook" novalidate>
     <div class="modal-bg" id="modal1">
-        <div class="modal medium">
+        <div class="modal full">
             <div class="modal-header">
-                <h2>Modal Title</h2>
+                <h2>New book</h2>
                 <svg onclick="close_modal('modal1', 100)" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#212121"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
             </div>
             <div class="modal-body">
@@ -113,6 +120,7 @@
                             <img src="" id="thumbnail">
                             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#212121"><path d="M480-480ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h320v80H200v560h560v-320h80v320q0 33-23.5 56.5T760-120H200Zm40-160h480L570-480 450-320l-90-120-120 160Zm440-320v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z"/></svg>
                             <span>Add image</span>
+                            <span id="cancel" onclick="clean_file('img','thumbnail');"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#212121"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></span>
                         </label>
 
                         <input type="file" name="img" id="img" accept='.jpg, .jpeg' oninput="change_placeholder(this.id,'thumbnail')">
@@ -120,39 +128,44 @@
                     <div class="form">
                         <div class="cell">
                             <label for="title">Title:</label>
-                            <input type="text" name="title" id="title">
+                            <input type="text" name="title" id="title" required>
                         </div>
 
                         <div class="cell">
                             <label for="author">Author:</label>
-                            <input type="author" name="author" id="author">
+                            <input type="text" name="author" id="author" required>
                         </div>
 
                         <div class="cell">
                             <label for="genre">Genre:</label>
-                            <select name="genre" id="genre">
-                                <option value="Fiction">Fiction</option>
-                                <option value="Fiction">Fiction</option>
-                                <option value="Fiction">Fiction</option>
-                                <option value="Fiction">Fiction</option>
-
-                                <option>Add new genre...</option>
-                            </select>
+                            <input type="text" name="genre" id="genre" required>
                         </div>
+                        
+                        <div class="cell">
+                            <label for="n_pages">Nº of pages:</label>
+                            <input type="text" name="n_pages" id="n_pages" oninput="int_js(this); limit_value(this.id, {'min': 0})" required>
+                        </div>
+
+                        <label for="description">Description:</label>
+                        <textarea name="description" id="description"></textarea>
                     </div>
                 </div>
             </div>
             <div class="modal-controls">
                 <button class="cancel">Cancel</button>
-                <button class="submit">Save</button>
+                <button class="submit" id="submit" disabled>Save</button>
             </div>
         </div>
         <div class="close"></div>
     </div>
+    </form>
+
 
 </body>
 <script src="../js/control_modal.js"></script>
 <script src="../js/change_placeholder.js"></script>
 <script src="../js/session_functions.js"></script>
+<script src="../js/masks.js"></script>
+<script src="../js/check_input.js"></script>
 <script src="../js/show_menu.js"></script>
 </html>
