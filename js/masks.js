@@ -19,10 +19,6 @@ function limit_value(id_input, threshold){
 
     let input = document.getElementById(id_input);
 
-    console.log(threshold['min'])
-    console.log(input.value)
-    console.log(input.value < threshold['min'])
-
     if(threshold['min'] == 0 && input.value == '-'){
         input.value = 0;
     }
