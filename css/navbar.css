@@ -1,7 +1,7 @@
 .navbar{
     
     width: 100%;
-    height: var(--main_heading-64px);
+    height: 4em;
     background-color: var(--main-colour);
 
     display: flex;
@@ -15,16 +15,16 @@
 
 .navbar h1{
     color: #f5f5f5;
-    margin-left: var(--text-16px);
+    margin-left: 1em;
     user-select: none;
 }
 
 .navbar .actions{
     display: flex;
     align-items: center;
-    gap: var(--heading-32px);
+    gap: 2em;
 
-    margin-right: var(--text-16px);
+    margin-right: 1em;
 }
 
 .navbar .actions a{

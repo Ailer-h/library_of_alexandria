@@ -28,14 +28,6 @@
 
     --box-shadow: rgba(0, 0, 0, 0.2);
 
-    /* Sizes */
-    --small-4px: .25em;
-    --small-8px: .5em;
-    --text-16px: 1em;
-    --text-24px: 1.5em;
-    --heading-32px: 2em;
-    --main_heading-64px: 4em;
-
 }
 
 *{
